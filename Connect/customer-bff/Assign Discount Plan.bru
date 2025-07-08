@@ -1,0 +1,23 @@
+meta {
+  name: Assign Discount Plan
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/discount/add
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "volvoId": "b247c6b0-7d00-46a1-9340-5a3b8a78315e",
+    "market": "GB",
+    "discountPlanId": "DISCO-fd6a35e134d6406a933b617878cef56b"
+  }
+}

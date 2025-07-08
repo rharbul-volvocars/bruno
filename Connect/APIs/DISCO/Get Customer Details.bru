@@ -1,0 +1,76 @@
+meta {
+  name: Get Customer Details
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: https://discount-qa.volvocars.biz/data/public/graphql/
+  body: graphql
+  auth: inherit
+}
+
+body:graphql {
+  query DiscountPlansList(
+    $marketId: ID!
+    $typeId: ID
+    $subTypeIds: [ID!]
+    $validAt: DateTime!
+  ) {
+    discountPlans(marketId: $marketId, typeId: $typeId, subTypeIds: $subTypeIds) {
+      id
+      name
+      typeId
+      typeName
+      subTypeId
+      subTypeName
+      lifecycleStatus
+      rateValueType
+      market {
+        countryCode
+        currency
+      }
+      version(validAt: $validAt) {
+        id
+        validFrom
+        validTo
+        carRates {
+          id
+          rate
+          carModelPnos {
+            name
+            code
+          }
+          engineTypes {
+            name
+            code
+          }
+          modelYears {
+            name
+            code
+          }
+          salesModels {
+            name
+            code
+          }
+          salesVersions {
+            name
+            code
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+body:graphql:vars {
+  {
+    "marketId": "GB",
+    "typeId": "CustomerSpecific",
+    "subTypeIds": [
+      "Loyalty"
+    ],
+    "validAt": "2025-03-09T13:02:53.081Z"
+  }
+}

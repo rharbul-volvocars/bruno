@@ -1,0 +1,26 @@
+meta {
+  name: DISCO
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{AZURE_TENANT_URL}}/{{AZURE_TENANT_ID}}/oauth2/v2.0/token
+  body: formUrlEncoded
+  auth: none
+}
+
+headers {
+  content-type: application/x-www-form-urlencoded
+}
+
+body:form-urlencoded {
+  grant_type: client_credentials
+  scope: {{DISCO_SCOPE}}/.default
+  client_id: {{DISCO_CLIENT_ID}}
+  client_secret: {{DISCO_CLIENT_SECRET}}
+}
+
+script:post-response {
+  bru.setVar('DISCO_BEARER',res.body.access_token);
+}

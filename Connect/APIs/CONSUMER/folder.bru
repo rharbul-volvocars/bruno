@@ -1,0 +1,16 @@
+meta {
+  name: CONSUMER
+  seq: 4
+}
+
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{CONSUMER_BEARER}}
+}
+
+script:pre-request {
+  await bru.runRequest('Auth/CONSUMER');
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Get Customer Details
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/:customer-hash-id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  customer-hash-id: {{CUSTOMER_HASH_ID}}
+}
+
+headers {
+  content-type: application/json
+}

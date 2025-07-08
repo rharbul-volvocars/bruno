@@ -1,0 +1,23 @@
+meta {
+  name: Search Customers
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/search
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "searchText": "",
+    "pageNumber": 1,
+    "market": "GB"
+  }
+}

@@ -1,0 +1,28 @@
+meta {
+  name: Create Invite
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{VOLVO_ID_HOST}}/user-account-api/v2/invite
+  body: json
+  auth: inherit
+}
+
+headers {
+  brand: VOLVO
+}
+
+body:json {
+  {
+    "firstname": "John",
+    "lastname": "John",
+    "market": "SE",
+    "language": "sv",
+    "email": "test123@email.com",
+    "phone": "+46734000000",
+    "username": "test123@email.com",
+    "activationLink": "https://subdomain.volvocars.com/your_app"
+  }
+}

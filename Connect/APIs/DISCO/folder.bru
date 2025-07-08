@@ -1,0 +1,16 @@
+meta {
+  name: DISCO
+  seq: 1
+}
+
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{DISCO_BEARER}}
+}
+
+script:pre-request {
+  await bru.runRequest('Auth/DISCO');
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Search Customers V2
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v2/customers/search
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "pageNumber": 1,
+    "pageLimit": 20,
+    //"pointerNext": 'NDQ=',
+    //"pointerPrev": "NDQ=",
+    "searchText": "Lin",
+    "market": "GB"
+  }
+}

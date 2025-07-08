@@ -1,0 +1,19 @@
+meta {
+  name: Get Consumer Wishlist
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{CONSUMER_HOST}}/wishlist/v1/services/configurations/:volvoid
+  body: none
+  auth: inherit
+}
+
+params:path {
+  volvoid: 1b190d7f-5cb9-4e0b-afb1-77b8b6f858aa
+}
+
+headers {
+  VCC-Api-Key: {{CONSUMER_SUB_KEY}}
+}

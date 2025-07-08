@@ -1,0 +1,22 @@
+meta {
+  name: Remove Discount Plan
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/discount/del
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "volvoId": "71d42886-54fd-41af-add1-ccf9da897838",
+    "market": "GB"
+  }
+}

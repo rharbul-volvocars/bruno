@@ -1,0 +1,12 @@
+meta {
+  name: customer-bff
+  seq: 3
+}
+
+auth {
+  mode: inherit
+}
+
+vars:pre-request {
+  BFF_HOST: {{CUSTOMER_BFF_HOST}}
+}

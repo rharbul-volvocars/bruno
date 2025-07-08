@@ -1,0 +1,16 @@
+headers {
+  VCC-Api-OperationId: {{VCC_OPP_ID}}
+  x-retail-hub-session-id: {{SESSION}}
+}
+
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{CONNECT_TOKEN}}
+}
+
+script:pre-request {
+  bru.setVar('VCC_OPP_ID', uuid.v4());
+}

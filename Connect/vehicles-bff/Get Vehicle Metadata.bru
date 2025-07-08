@@ -1,0 +1,15 @@
+meta {
+  name: Get Vehicle Metadata
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{BFF_HOST}}/api/:vin/metadata
+  body: none
+  auth: inherit
+}
+
+params:path {
+  vin: {{VIN}}
+}

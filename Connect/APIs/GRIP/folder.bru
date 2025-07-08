@@ -1,0 +1,16 @@
+meta {
+  name: GRIP
+  seq: 1
+}
+
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{GRIP_BEARER}}
+}
+
+script:pre-request {
+  await bru.runRequest('Auth/GRIP');
+}

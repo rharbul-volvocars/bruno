@@ -1,0 +1,26 @@
+meta {
+  name: Search Customer Orders
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/:customer-hash-id/orders
+  body: json
+  auth: inherit
+}
+
+params:path {
+  customer-hash-id: {{CUSTOMER_HASH_ID}}
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "searchText": "",
+    "pageNumber": 1
+  }
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Search Invite
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{VOLVO_ID_HOST}}/user-account-api/v1/invite/search
+  body: none
+  auth: inherit
+}
+
+headers {
+  username: concarus@volvocars.com
+  brand: VOLVO
+}

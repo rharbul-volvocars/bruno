@@ -1,0 +1,19 @@
+meta {
+  name: Invite by ID
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{VOLVO_ID_HOST}}/user-account-api/v1/invite/:inviteid
+  body: none
+  auth: inherit
+}
+
+params:path {
+  inviteid: 1b190d7f-5cb9-4e0b-afb1-77b8b6f858aa
+}
+
+headers {
+  brand: VOLVO
+}

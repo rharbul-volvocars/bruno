@@ -1,0 +1,16 @@
+meta {
+  name: VOLVOID
+  seq: 3
+}
+
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{VOLVOID_BEARER}}
+}
+
+script:pre-request {
+  await bru.runRequest('Auth/VOLVOID');
+}

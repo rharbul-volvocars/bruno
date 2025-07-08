@@ -1,0 +1,22 @@
+meta {
+  name: Get Discount Plan Details
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/discount/details
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "volvoId": "cb3ef69a-fd6b-4142-a6bd-12310d075fa8",
+    "market": "GB"
+  }
+}

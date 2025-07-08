@@ -1,0 +1,21 @@
+meta {
+  name: Get Discount Plans List
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/discount/plans
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "market": "GB"
+  }
+}

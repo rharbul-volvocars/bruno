@@ -1,0 +1,17 @@
+{
+  "version": "1",
+  "name": "Connect",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ],
+  "scripts": {
+    "moduleWhitelist": [
+      "crypto"
+    ],
+    "filesystemAccess": {
+      "allow": true
+    }
+  }
+}

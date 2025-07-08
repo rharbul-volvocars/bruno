@@ -1,0 +1,81 @@
+meta {
+  name: Get Customer Details
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: https://gw.qa.partner.api.volvocars.biz/consumer-graphql/
+  body: graphql
+  auth: inherit
+}
+
+headers {
+  Ocp-Apim-Subscription-Key: dd26dfc357984dbe9a161c7eb3947ac4
+}
+
+body:graphql {
+  query GetCustomerDetails($consumerId: String!) {
+    consumer(consumerId: $consumerId) {
+      person {
+        firstName
+        surname
+      }
+      hasContactDetails {
+        edges {
+          node {
+            value
+            type
+            usageDescription
+            validationStatus
+          }
+        }
+      }
+      hasAddresses {
+        edges {
+          node {
+            addressLine1
+            addressLine2
+            addressLine3
+            addressLine4
+            postalCodeNumber
+            city
+            district
+            country
+            type
+          }
+        }
+      }
+      hasAlternativeIds {
+        edges {
+          node {
+            value
+            type
+            typeDescription
+          }
+        }
+      }
+      hasVehicles(first: 10) {
+        edges {
+          type
+          startDate
+          endDate
+          node {
+            vin
+            make
+            model
+            modelYear
+            modelDescription
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+body:graphql:vars {
+  {
+    "consumerId": "16833375"
+  }
+}
