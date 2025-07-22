@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: {{CONSUMER_HOST}}/wishlist/v1/services/configurations/:volvoid
+  url: {{WISHLIST_HOST}}/wishlist/v1/services/configurations/:volvoid
   body: none
   auth: inherit
 }
@@ -15,5 +15,5 @@ params:path {
 }
 
 headers {
-  VCC-Api-Key: {{CONSUMER_SUB_KEY}}
+  VCC-Api-Key: {{WISHLIST_SUB_KEY}}
 }
