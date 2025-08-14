@@ -1,0 +1,19 @@
+meta {
+  name: Get Favorites V2
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{BFF_HOST}}/v2/news/favorites?locale={{LOCALE}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  locale: {{LOCALE}}
+}
+
+settings {
+  encodeUrl: false
+}

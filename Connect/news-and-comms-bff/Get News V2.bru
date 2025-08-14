@@ -1,0 +1,19 @@
+meta {
+  name: Get News V2
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{BFF_HOST}}/v2/news?locale={{LOCALE}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  locale: {{LOCALE}}
+}
+
+settings {
+  encodeUrl: false
+}

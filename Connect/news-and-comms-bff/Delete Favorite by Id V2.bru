@@ -1,0 +1,23 @@
+meta {
+  name: Delete Favorite by Id V2
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{BFF_HOST}}/v2/news/favorites/:id?locale={{LOCALE}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  locale: {{LOCALE}}
+}
+
+params:path {
+  id: blt2816f9949a3598a0
+}
+
+settings {
+  encodeUrl: false
+}

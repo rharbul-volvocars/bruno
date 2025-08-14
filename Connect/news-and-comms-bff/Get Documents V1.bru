@@ -1,0 +1,19 @@
+meta {
+  name: Get Documents V1
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{BFF_HOST}}/v1/documents?locale={{LOCALE}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  locale: {{LOCALE}}
+}
+
+settings {
+  encodeUrl: false
+}

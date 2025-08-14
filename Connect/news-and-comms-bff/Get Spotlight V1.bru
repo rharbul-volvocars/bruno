@@ -1,0 +1,19 @@
+meta {
+  name: Get Spotlight V1
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{BFF_HOST}}/v1/news/spotlight?locale={{LOCALE}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  locale: {{LOCALE}}
+}
+
+settings {
+  encodeUrl: false
+}

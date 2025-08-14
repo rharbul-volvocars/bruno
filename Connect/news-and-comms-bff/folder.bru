@@ -1,0 +1,18 @@
+meta {
+  name: news-and-comms-bff
+  seq: 6
+}
+
+headers {
+  X-Retail-Hub-Session-Id: {{SESSION_ID}}
+  X-Retail-Hub-User-Id: {{USER_ID}}
+}
+
+auth {
+  mode: inherit
+}
+
+vars:pre-request {
+  BFF_HOST: {{NEWS_BFF_HOST}}
+  LOCALE: no-no
+}
