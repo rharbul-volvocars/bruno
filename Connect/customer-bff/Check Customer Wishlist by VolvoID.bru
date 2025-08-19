@@ -1,0 +1,19 @@
+meta {
+  name: Check Customer Wishlist by VolvoID
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/wishlist/:volvoId
+  body: json
+  auth: inherit
+}
+
+params:path {
+  volvoId: 1b190d7f-5cb9-4e0b-afb1-77b8b6f858aa
+}
+
+headers {
+  content-type: application/json
+}

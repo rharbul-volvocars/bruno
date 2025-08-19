@@ -1,0 +1,29 @@
+meta {
+  name: Retrieve Customer Wishlist by VolvoID
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/wishlist/:volvoId
+  body: json
+  auth: inherit
+}
+
+params:path {
+  volvoId: 1b190d7f-5cb9-4e0b-afb1-77b8b6f858aa
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "volvoId": "1b190d7f-5cb9-4e0b-afb1-77b8b6f858aa",
+    "locale": "en-GB",
+    "isStock": false,
+    "carType": "CONFIGURABLE",
+    "discountPlanId": "DISCO-fd6a35e134d6406a933b617878cef56b"
+  }
+}
