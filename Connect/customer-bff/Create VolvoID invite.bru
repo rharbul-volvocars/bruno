@@ -1,0 +1,27 @@
+meta {
+  name: Create VolvoID invite
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/volvoid/invite
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "firstname": "John",
+    "lastname": "John",
+    "market": "SE",
+    "language": "sv",
+    "email": "test123@email.com",
+    "phone": "+46734000000",
+    "username": "test123@email.com"
+  }
+}

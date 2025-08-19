@@ -1,0 +1,21 @@
+meta {
+  name: Search VolvoID invite
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{BFF_HOST}}/connect-customer-bff/v1/customers/volvoid/invite/search
+  body: json
+  auth: inherit
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "email": "robert.harbul@volvocars.com"
+  }
+}
